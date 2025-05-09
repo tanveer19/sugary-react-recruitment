@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 
 const Header = () => {
-  // const { user, logOut } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
   const handleLogout = () => {
     logOut()
       .then(() => {})
@@ -24,11 +24,7 @@ const Header = () => {
         <Link to="/">Home</Link>
       </li>
 
-      {/* {user && (
-        <li>
-          <Link to="/profile">Profile</Link>
-        </li>
-      )}
+      {/*
 
       {user && (
         <li>
@@ -36,27 +32,21 @@ const Header = () => {
         </li>
       )}
 
-      {user && (
-        <div>
-          <img src={user.photoURL} alt="" style={{ width: "60px" }} />
-        </div>
-      )}
+
+       */}
 
       <li>
         {user ? (
-          <>
-            <span>{user.email}</span>
-            <button
-              onClick={handleLogout}
-              className="btn btn-xs self-center w-fit"
-            >
+          <div>
+            <span className="mr-2">Hi, {user.email}</span>
+            <button onClick={handleLogout} className="btn">
               Sign out
             </button>
-          </>
+          </div>
         ) : (
           <Link to="/login">Login</Link>
         )}
-      </li> */}
+      </li>
     </>
   );
   return (
