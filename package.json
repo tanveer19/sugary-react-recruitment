@@ -16,6 +16,7 @@
     "react-dom": "^19.1.0",
     "react-hook-form": "^7.56.3",
     "react-icons": "^5.5.0",
+    "react-lazy-load": "^4.0.1",
     "react-router-dom": "^6.30.0",
     "sweetalert2": "^11.21.0",
     "tailwindcss": "^4.1.5"
@@ -30,6 +31,7 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.19",
     "globals": "^16.0.0",
+    "vercel": "^41.7.4",
     "vite": "^6.3.5"
   }
 }
