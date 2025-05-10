@@ -44,7 +44,7 @@ const Login = () => {
           timer: 1500,
         });
         // redirect to home
-        navigate("/");
+        navigate("/dashboard");
       } else {
         setError("Invalid credentials");
       }

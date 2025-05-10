@@ -24,16 +24,11 @@ const Header = () => {
         <Link to="/">Home</Link>
       </li>
 
-      {/*
-
       {user && (
         <li>
-          <Link to="/dashboard/userhome">Dashboard</Link>
+          <Link to="/dashboard">Dashboard</Link>
         </li>
       )}
-
-
-       */}
 
       <li>
         {user ? (
