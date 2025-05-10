@@ -5,7 +5,11 @@ import { useEffect } from "react";
 export const AuthContext = createContext(null);
 
 const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState(() => {
+    const storedUser = localStorage.getItem("user");
+    return storedUser ? JSON.parse(storedUser) : null;
+  });
+
   const [accessToken, setAccessToken] = useState(
     localStorage.getItem("accessToken")
   );
@@ -68,6 +72,7 @@ const AuthProvider = ({ children }) => {
     setUser(userData);
     setAccessToken(token);
     localStorage.setItem("accessToken", token);
+    localStorage.setItem("user", JSON.stringify(userData));
     if (refreshToken) {
       localStorage.setItem("refreshToken", refreshToken);
     }
@@ -78,6 +83,7 @@ const AuthProvider = ({ children }) => {
     setAccessToken(null);
     localStorage.removeItem("accessToken");
     localStorage.removeItem("refreshToken");
+    localStorage.removeItem("user");
   };
 
   const authInfo = {
