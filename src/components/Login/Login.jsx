@@ -26,7 +26,7 @@ const Login = () => {
           Password: data.password,
         }
       );
-      console.log("Res: ", res.data);
+      // console.log("Res: ", res.data);
 
       if (res.data.Success) {
         // save to localstorage

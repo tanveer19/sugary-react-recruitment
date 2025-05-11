@@ -9,6 +9,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Login from "./components/Login/Login.jsx";
 import AuthProvider from "./providers/AuthProvider.jsx";
 import Dashboard from "./components/Dashboard/Dashboard.jsx";
+import PrivateRoute from "./routes/PrivateRoute.jsx";
 
 const router = createBrowserRouter([
   {
@@ -27,7 +28,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/dashboard",
-        element: <Dashboard></Dashboard>,
+        element: (
+          <PrivateRoute>
+            <Dashboard></Dashboard>
+          </PrivateRoute>
+        ),
       },
     ],
   },

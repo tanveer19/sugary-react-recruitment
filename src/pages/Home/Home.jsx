@@ -10,7 +10,7 @@ const Home = () => {
           Discover and manage materials easily. Login to access your dashboard
           and explore more features.
         </p>
-        <Link to="/login" className="btn btn-primary">
+        <Link to="/dashboard" className="btn btn-primary">
           Get Started
         </Link>
       </div>
